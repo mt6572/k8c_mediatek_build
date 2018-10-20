@@ -105,10 +105,10 @@ class OsCheck(object):
         self.tag = True
         self.info = ""
 
-    def checkEnv(self):
-        self.checkPlatform()
-        if self.tag:
-            self.checkOsBit()
+    # def checkEnv(self):
+    #     self.checkPlatform()
+    #     if self.tag:
+    #         self.checkOsBit()
    
     def checkPlatform(self):
         global checkResult
@@ -739,7 +739,6 @@ print >> sys.stdout,"***********************************************************
 for item in optionsList:
     if item.has_key("os") and item.get("os") == True:
         o = OsCheck()
-        o.checkEnv()
         if checkResult == 2:
            break 
     elif item.has_key("perl") and item.get("perl") == True:
@@ -753,7 +752,6 @@ for item in optionsList:
         m.checkEnv()
     elif item.has_key("jdk") and item.get("jdk") == True:
         j = JavaCheck()
-        j.checkEnv()
     elif item.has_key("gcc") and item.get("gcc") == True:
         g = GccCheck()
         g.checkEnv()
@@ -771,7 +769,6 @@ for item in optionsList:
         g.checkEnv()
     elif item.has_key("mingw") and item.get("mingw") == True:
         m = MingwCheck()
-        m.checkEnv()
     elif item.has_key("unix2dos") and item.get("unix2dos") == True:
         m = Unix2DosCheck()
         m.checkEnv()
